@@ -13,8 +13,8 @@ namespace Nursery.Core.Services
         Baby GetB(int id);
         Baby AddB(Baby baby);
         Baby PutB(int id, Baby baby);
-        void DeleteB(int id);
-        
+        void DeleteB(int id);        
+
         
         
     }

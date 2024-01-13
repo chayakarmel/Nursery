@@ -19,6 +19,8 @@ namespace Nursery.Service
         }
          public List<Baby> GetAll()
         {
+           //  var list = _userRepository.GetList();//פנינו לשכבת הדאטה לקבל את הנתונים
+            //return list.Where(u => u.Name.Contains(text)).ToList();
             return _babyRepository.GetList();
         }
 

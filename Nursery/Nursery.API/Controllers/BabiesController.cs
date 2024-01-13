@@ -35,24 +35,33 @@ namespace Nursery.API.Controllers
 
         // POST api/<BabiesController>
         [HttpPost]
-        public Baby Post([FromBody] Baby baby)
+        public ActionResult Post([FromBody] Baby baby)
         {
 
-            _babyService.AddB(baby);
-            return baby;
+            //_babyService.AddB(baby);
+            //return baby;
+            return Ok(_babyService.AddB(baby));
         }
         //PUT api/<BabiesController>/5
         [HttpPut("{id}")]
-        public Baby Put(int id, [FromBody] Baby baby)
+        public ActionResult Put(int id, [FromBody] Baby baby)
         {
-            return _babyService.PutB(id, baby);
+            //return _babyService.PutB(id, baby);
+            return Ok(_babyService.PutB(id, baby)); 
         }
 
         // DELETE api/<BabiesController>/5
         [HttpDelete("{id}")]
-        public void Delete(int id)
+        public ActionResult Delete(int id)
         {
-            _babyService.DeleteB(id);
+            // _babyService.DeleteB(id);
+            var baby = _babyService.GetB(id);
+            if (baby is null)
+            {
+                return NotFound();
+            }
+           _babyService.DeleteB(id);
+            return NoContent();
         }
     }
 }

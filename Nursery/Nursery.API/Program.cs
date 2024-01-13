@@ -1,3 +1,5 @@
+
+
 using Nursery.Core.Repositories;
 using Nursery.Core.Services;
 using Nursery.Data;
@@ -12,8 +14,10 @@ builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+
 builder.Services.AddScoped<IBabyService,BabyService>();
 builder.Services.AddScoped<IBabyRepository, BabyRepository>();
+
 //builder.Services.AddSingleton<DataContext>();
 builder.Services.AddDbContext<DataContext>();
 

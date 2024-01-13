@@ -13,33 +13,18 @@ namespace Nursery.Data
 
         public DbSet<Baby> Babies { get; set; }
 
+        public DbSet<Nurse> Nurses { get; set; }
+
+        public DbSet<Turn> Turns { get; set; }
+
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlServer("Server=(localdb)//mssqllocaldb;Database=my_db");
+            optionsBuilder.UseSqlServer("Server=(localdb)\\mssqllocaldb;Database=sample_db;Trusted_Connection=True");
         }
 
-        //public List<Baby> Babies { get; set; }
 
-        //public DataContext()
-        //{
-        //    Babies=new List<Baby>{
-        //        new Baby {Id= 1,Name= "Name",Age= 1 }
-        //    };
-           
-        //}
-        //public Baby AddABaby(Baby baby)
-        //{
-        //    //try 
-        //    //{	        
-        //    Babies.Add(new Baby { Id=+1,Name=baby.Name,Age=baby.Age});
-        //    return baby;
-        //    // }
-        //    //catch (Exception)
-        //    // {
-        //    //	return "can't add";
-        //    //  }
 
-        //}
+
     }
 }
